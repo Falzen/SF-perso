@@ -1,0 +1,12 @@
+<aura:component >
+    <ltng:require scripts="{!$Resource.jquery_331}" afterScriptsLoaded="{!c.doInit}" />
+	
+    
+    <div id="memoryContainer">
+        <p>coucou</p>
+
+        <p id="coups"></p>
+        <section class="game">
+        </section>
+    </div>
+</aura:component>

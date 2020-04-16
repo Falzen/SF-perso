@@ -1,0 +1,107 @@
+<apex:page controller="VFP_DoubleGroupingList_Controller" lightningStylesheets="true">
+    <!-- 
+test quote id: 0Q01n000001hb01 
+id=0Q01n000001hb01
+-->
+    
+    <style> 
+        *, *>* {
+        box-sizing: border-box;
+        }
+        #doubleGrouping-pageContainer {
+        width: 1350px; 
+        }
+        .test-container {
+        margin: 7px auto; 
+        }
+        .temp {
+        display: inline-block;
+        width: 210px;
+        text-align: left;
+        }
+        .columns-container {
+        width: 100%;
+        }
+        .tempColumnName {
+        display: inline-block;
+        width: 210px;
+        text-align: center;
+        background-color: lightgrey; 
+        border-bottom: none;
+        }
+        .subtotal-container {
+        margin-top: 7px;
+        }
+        .subtotal-container .temp {
+        background-color: lightgreen;
+        }
+        
+    </style>
+    
+    <script>
+    // not used as of now
+    var test = '{! accessJsonMap }';
+    var dataMapJS = JSON.parse(test);
+    console.log('dataMapJS : ', dataMapJS);
+    </script> 
+    
+    
+    
+    
+    <div id="doubleGrouping-pageContainer">
+        
+        <p>
+            {! 'quote name from url id: ' + currentQuote.Name }  
+        </p>
+        <br/>
+        <apex:repeat value="{!dataMap}" var="oneGrouping">  <!--Outer map key = key1 -->
+            
+            <apex:pageBlock title="{!oneGrouping}">         
+                <apex:repeat value="{!dataMap[oneGrouping]}" var="oneSubGrouping">  <!--Inner map key = key2 -->  
+                    <!-- NOT WORKING !!! -->
+                    <apex:outputPanel rendered="{! !ISBLANK(dataMap[oneGrouping][oneSubGrouping])}"> 
+                        
+                        
+                        <apex:pageBlock title="{!oneSubGrouping}">  
+                            <div class="test">
+                                <div class="columns-container">
+                                    <span class="tempColumnName">subtype_test__c</span>
+                                    <span class="tempColumnName">fakedata1__c</span>
+                                    <span class="tempColumnName">fakedata2__c</span>
+                                    <span class="tempColumnName">fakedata3__c</span>
+                                    <span class="tempColumnName">fakedata4__c</span>
+                                    <span class="tempColumnName">fakedata5__c</span>
+                                </div>
+                                <apex:repeat value="{!dataMap[oneGrouping][oneSubGrouping]}" var="oneQli">  <!--Inner map key = key2 -->
+                                    
+                                    
+                                    <div class="test-container">
+                                        <span class="temp">{! oneQli['subtype_test__c']}</span>
+                                        <span class="temp">{! oneQli['fakedata1__c']}</span>
+                                        <span class="temp">{! oneQli['fakedata2__c']}</span>
+                                        <span class="temp">{! oneQli['fakedata3__c']}</span>
+                                        <span class="temp">{! oneQli['fakedata4__c']}</span>
+                                        <span class="temp">{! oneQli['fakedata5__c']}</span>
+                                    </div>
+                                </apex:repeat>
+                                <div class="subtotal-container">
+                                    <span class="temp">&nbsp;</span>
+                                    <span class="temp">&nbsp;</span>
+                                    <span class="temp">&nbsp;</span>
+                                    <span class="temp">&nbsp;</span>
+                                    <span class="temp">500000</span>
+                                    <span class="temp">456987456</span>
+                                </div>
+                            </div>
+                        </apex:pageBlock>
+                        
+                    </apex:outputPanel>
+                </apex:repeat>
+            </apex:pageBlock>
+            
+        </apex:repeat>
+        
+        
+    </div>
+    
+</apex:page>

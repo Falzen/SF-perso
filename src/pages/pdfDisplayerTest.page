@@ -1,0 +1,12 @@
+<apex:page standardController="Contact">
+    
+    
+    
+    <apex:image value="{!$Resource.pdfTest}"/>
+
+    
+    
+   {!$Resource.pdfTest}
+
+    
+</apex:page>

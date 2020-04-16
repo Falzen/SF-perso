@@ -1,0 +1,18 @@
+# exclude local config file used in force code
+\.forceCode/
+\.vscode/
+\.sfdx/
+force.json
+sfdx-project.json
+resource-bundles/
+
+\.vim-force\.com/
+
+build.properties
+build.xml
+force.json
+sfdx-project.json
+.forceCode/jerome.malenfant@gmail.com/settings.json
+.forceCode/jerome.malenfant@gmail.com/sfdx-project.json
+.forceCode/jerome.malenfant@gmail.com/.sfdx/sfdx-config.json
+.sfdx/sfdx-config.json

@@ -1,0 +1,9 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Quick Account Creation</h1>
+  <p style="color:red;"> test text</p>
+  
+      <flow:interview name="Quick_Account"/>
+      
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

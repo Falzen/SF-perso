@@ -1,0 +1,7 @@
+<apex:page >
+    
+    <p>
+        {! $user.firstname}
+        {!IF($user.isActive, $user.firstname, 'nobody') }
+    </p>
+</apex:page>

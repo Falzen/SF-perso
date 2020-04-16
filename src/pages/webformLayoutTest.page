@@ -1,0 +1,55 @@
+<apex:page standardController="Case" showHeader="false"  sidebar="false">
+    <!-- extensions="VFC48_WebFormController" language="{!language}" -->
+    <apex:slds />
+    
+    <div class="container">
+        
+        
+        <apex:form >                
+            <h1>$Label.CAS_Case_Info</h1>
+            
+            <!-- primaryReason -->
+            <fieldset class="slds-form-element">
+                <!-- <legend class="slds-form-element__legend slds-form-element__label">Case type</legend> -->
+                <div class="slds-form-element__control">
+                    <div class="slds-radio--button-group">
+                        <span class="slds-button slds-radio--button">
+                            <input type="radio" name="radio" id="monday" />
+                            <label class="slds-radio--button__label" for="monday">
+                                <span class="slds-radio--faux">Product</span>
+                            </label>
+                        </span>
+                        <span class="slds-button slds-radio--button">
+                            <input type="radio" name="radio" id="tuesday" />
+                            <label class="slds-radio--button__label" for="tuesday">
+                                <span class="slds-radio--faux">Apps</span>
+                            </label>
+                        </span>
+                        <span class="slds-button slds-radio--button">
+                            <input type="radio" name="radio" id="wednesday" />
+                            <label class="slds-radio--button__label" for="wednesday">
+                                <span class="slds-radio--faux">Order</span>
+                            </label>
+                        </span>
+                        <span class="slds-button slds-radio--button">
+                            <input type="radio" name="radio" id="thursday" />
+                            <label class="slds-radio--button__label" for="thursday">
+                                <span class="slds-radio--faux">Other</span>
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- END primaryReason -->
+            
+            <apex:ActionRegion >
+                <apex:inputField id="category3"  rendered="">
+                    <!--<apex:actionSupport event="onchange" reRender="form" action=""/>-->
+                </apex:inputField>
+            </apex:ActionRegion>
+            
+            
+        </apex:form>
+        
+    </div>
+</apex:page>
